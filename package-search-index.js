@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"invmgr"},{"l":"invmgr.AbstractClasses"},{"l":"invmgr.Controllers"},{"l":"invmgr.Models"}]
