@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="productDialog" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="invmgr.Controllers.ProductController">
+  <children>
+    <MenuBar visible="false" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="900.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Label layoutX="28.0" layoutY="28.0" prefHeight="498.0" prefWidth="848.0" style="-fx-border-color: black; -fx-border-radius: 15;" />
+            <Label fx:id="addProductLabel" layoutX="71.0" layoutY="64.0" text="Add Product">
+               <font>
+                  <Font name="Source Sans Pro Semibold" size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="idTextField" disable="true" layoutX="214.0" layoutY="145.0" prefHeight="27.0" prefWidth="116.0" style="-fx-font-style: italic;" text="Auto Gen- Disabled" />
+            <Label layoutX="88.0" layoutY="150.0" text="ID" />
+            <TextField fx:id="nameTextField" layoutX="214.0" layoutY="185.0" prefHeight="27.0" prefWidth="116.0" style="-fx-font-style: italic;" />
+            <Label layoutX="88.0" layoutY="190.0" text="Name" />
+            <TextField fx:id="invTextField" layoutX="214.0" layoutY="223.0" prefHeight="27.0" prefWidth="74.0" style="-fx-font-style: italic;" />
+            <Label layoutX="88.0" layoutY="228.0" text="Inv" />
+            <TextField fx:id="priceTextField" layoutX="214.0" layoutY="261.0" prefHeight="27.0" prefWidth="74.0" style="-fx-font-style: italic;" />
+            <Label layoutX="88.0" layoutY="266.0" text="Price" />
+            <TextField fx:id="maxTextField" layoutX="214.0" layoutY="299.0" prefHeight="27.0" prefWidth="74.0" style="-fx-font-style: italic;" />
+            <Label layoutX="88.0" layoutY="304.0" text="Max" />
+            <Label layoutX="312.0" layoutY="304.0" text="Min" />
+            <Button fx:id="saveBtn" layoutX="685.0" layoutY="476.0" mnemonicParsing="false" onAction="#addClick" text="Save" />
+            <Button fx:id="cancelBtn" layoutX="778.0" layoutY="476.0" mnemonicParsing="false" onAction="#cancelClick" text="Cancel" />
+            <TextField fx:id="partSearchBar" layoutX="675.0" layoutY="49.0" onAction="#handlePartsSearch" promptText="Search by Part ID or Name" />
+            <TableView fx:id="partTable" layoutX="461.0" layoutY="86.0" prefHeight="145.0" prefWidth="375.0">
+               <columns>
+                  <TableColumn fx:id="partIdCol" editable="false" prefWidth="54.0" text="Part ID" />
+                  <TableColumn fx:id="partNameCol" editable="false" prefWidth="93.0" text="Part Name" />
+                  <TableColumn fx:id="partInvCol" editable="false" prefWidth="108.5" text="Inventory Level" />
+                  <TableColumn fx:id="partPriceCol" prefWidth="118.0" text="Price / Cost Per Unit" />
+               </columns>
+            </TableView>
+            <Button fx:id="addBtn" layoutX="795.0" layoutY="237.0" mnemonicParsing="false" onAction="#addPart" text="Add" />
+            <TextField fx:id="minTextField" layoutX="345.0" layoutY="299.0" prefHeight="27.0" prefWidth="74.0" style="-fx-font-style: italic;" />
+            <Button fx:id="removeBtn" layoutX="685.0" layoutY="430.0" mnemonicParsing="false" onAction="#removePart" text="Remove Associated Part" />
+            <TableView fx:id="partCollectionTable" layoutX="461.0" layoutY="279.0" prefHeight="145.0" prefWidth="375.0">
+               <columns>
+                  <TableColumn fx:id="partCollectionIdCol" editable="false" prefWidth="54.0" text="Part ID" />
+                  <TableColumn fx:id="partCollectionNameCol" editable="false" prefWidth="93.0" text="Part Name" />
+                  <TableColumn fx:id="partCollectionInvCol" editable="false" prefWidth="108.5" text="Inventory Level" />
+                  <TableColumn fx:id="partCollectionPriceCol" prefWidth="118.0" text="Price / Cost Per Unit" />
+               </columns>
+            </TableView>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

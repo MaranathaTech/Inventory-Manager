@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="partDialog" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="invmgr.Controllers.PartController">
+  <children>
+    <MenuBar visible="false" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="632.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Label fx:id="addPartLabel" layoutX="71.0" layoutY="40.0" text="Add Part">
+               <font>
+                  <Font name="Source Sans Pro Semibold" size="17.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="inHouseRadio" layoutX="193.0" layoutY="43.0" mnemonicParsing="false" onAction="#inHouseRadioClick" selected="true" text="In-House">
+               <toggleGroup>
+                  <ToggleGroup fx:id="part1" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="outsourcedRadio" layoutX="346.0" layoutY="43.0" mnemonicParsing="false" onAction="#outsourcedRadioClick" text="Outsourced" toggleGroup="$part1" />
+            <TextField fx:id="idTextField" disable="true" layoutX="214.0" layoutY="104.0" prefHeight="27.0" prefWidth="116.0" style="-fx-font-style: italic;" text="Auto Gen- Disabled" />
+            <Label layoutX="88.0" layoutY="109.0" text="ID" />
+            <TextField fx:id="nameTextField" layoutX="214.0" layoutY="144.0" prefHeight="27.0" prefWidth="116.0" style="-fx-font-style: italic;" />
+            <Label layoutX="88.0" layoutY="149.0" text="Name" />
+            <TextField fx:id="invTextField" layoutX="214.0" layoutY="182.0" prefHeight="27.0" prefWidth="116.0" style="-fx-font-style: italic;" />
+            <Label layoutX="88.0" layoutY="187.0" text="Inv" />
+            <TextField fx:id="priceTextField" layoutX="214.0" layoutY="220.0" prefHeight="27.0" prefWidth="116.0" style="-fx-font-style: italic;" />
+            <Label layoutX="88.0" layoutY="225.0" text="Price/Cost" />
+            <TextField fx:id="maxTextField" layoutX="214.0" layoutY="258.0" prefHeight="27.0" prefWidth="116.0" style="-fx-font-style: italic;" />
+            <Label layoutX="88.0" layoutY="263.0" text="Max" />
+            <TextField fx:id="machineTextField" layoutX="214.0" layoutY="296.0" prefHeight="27.0" prefWidth="116.0" style="-fx-font-style: italic;" />
+            <Label fx:id="machineLabel" layoutX="88.0" layoutY="301.0" text="Machine ID" />
+            <TextField fx:id="minTextField" layoutX="404.0" layoutY="258.0" prefHeight="27.0" prefWidth="116.0" style="-fx-font-style: italic;" />
+            <Label layoutX="359.0" layoutY="263.0" text="Min" />
+            <Button fx:id="saveBtn" layoutX="347.0" layoutY="356.0" mnemonicParsing="false" onAction="#addClick" text="Save" />
+            <Button fx:id="cancelBtn" layoutX="411.0" layoutY="356.0" mnemonicParsing="false" onAction="#cancelClick" text="Cancel" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
